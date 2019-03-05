@@ -1,0 +1,107 @@
+<!--
+/*
+* Author: Jerome Renaux
+* E-mail: jerome.renaux@gmail.com
+ */
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="phaser.min.js"></script>
+    <script type="text/javascript" src="menu.js"></script>
+    <script type="text/javascript" src="game.js"></script>
+    <script type="text/javascript" src="leaderboard.js"></script>
+    <title>Tetris</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: black;
+        }
+        #game{
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            width: 908px;
+          }
+        #keys{
+            color: white;
+            font-weight: bold;
+            top: 200px;
+            left: 160px;
+            display: none;
+            position: absolute;
+            padding: 15px;
+            background-image: url('assets/electric.jpg');
+        }
+        #keys div{
+            margin-right: 15px;
+            min-width: 100px;
+        }
+        #cup {
+            position: absolute;
+            display: none;
+            width: 128px;
+            height: 128px;
+            top: 500px;
+            left: 390px;
+        }
+        #name {
+            color: white;
+            font-weight: bold;
+            display: none;
+            background-image: url('assets/electric.jpg');
+            top: 400px;
+            left: 320px;
+            text-align: center;
+            width: 250px;
+            position: absolute;
+            padding: 15px;
+        }
+        input{
+            background-color: black;
+            color: white;
+            border: 1px solid white;
+            padding: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div style='' id='game'>
+        <div id="keys">
+            <div>
+                Pöörata kellaosuti suunas: <br/>
+                Pöörata kellaosutile vastupidises suunas:<br/>
+                Paus: <br/>
+            </div>
+            <div>
+               <input readonly type="text" id="rotateleft" title="Pöörata kellaosuti suunas" value="UP" onkeydown="Menu.updateKey(event,this.id)"/><br/>
+                <input readonly type="text" id="rotateright" title="Pöörata kellaosutile vastupidises suunas" value="C" onkeydown="Menu.updateKey(event,this.id)"/><br/>
+                <input readonly type="text" id="pause" title="Pausilepanekuks on vaja vajutada" value="SPACEBAR" onkeydown="Menu.updateKey(event,this.id)"/><br/>
+            </div>
+            <div>
+                Vasakule:<br/>
+                Paremale:<br/>
+                Alla: <br/>
+            </div>
+            <div>
+                <input readonly type="text" id="moveleft" title="Vasakule liigutamine" value="LEFT" onkeydown="Menu.updateKey(event,this.id)"/><br/>
+                <input readonly type="text" id="moveright" title="Paremale liigutamine" value="RIGHT" onkeydown="Menu.updateKey(event,this.id)"/><br/>
+                <input readonly type="text" id="movedown" title="Alla liigutamine" value="DOWN" onkeydown="Menu.updateKey(event,this.id)"/><br/>
+            </div>
+        </div>
+        <div id="cup">
+            <img src="assets/cup.png" onclick="loadLeaderboard()"/>
+        </div>
+        <div id="name">
+            Sinu nimi: <br/>
+            <input type="text" id="playername"/><br/>
+            <input type="submit" title="Mängija nimi" value="OK" onclick="sendScore(); loadLeaderboard();"/>
+        </div>
+    </div>
+</body>
+<script src="main.js" type="text/javascript"></script>
+</html>
