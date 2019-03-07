@@ -136,11 +136,11 @@ Game.radio = { // helifailide info objekt
 };
 
 Game.preload = function() {
-    game.load.spritesheet('blocks','assets/blocks.png',blockSize,blockSize,nbBlockTypes+1);
-    game.load.spritesheet('sound','assets/sound.png',32,32); // heli sisse- ja väljalülitamise ikoon
-    game.load.audio('move','assets/sound/move.mp3','assets/sound/move.ogg');
-    game.load.audio('win','assets/sound/win.mp3','assets/sound/win.ogg');
-    game.load.audio('gameover','assets/sound/gameover.mp3','assets/sound/gameover.ogg');
+    game.load.spritesheet('blocks','blocks.png',blockSize,blockSize,nbBlockTypes+1);
+    game.load.spritesheet('sound','sound.png',32,32); // heli sisse- ja väljalülitamise ikoon
+    game.load.audio('move','move.mp3','move.ogg');
+    game.load.audio('win','win.mp3','win.ogg');
+    game.load.audio('gameover','gameover.mp3','gameover.ogg');
 };
 
 Game.create = function(){

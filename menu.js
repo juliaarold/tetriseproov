@@ -8,11 +8,11 @@ var Menu = {};
 
 Menu.preload = function(){
     // kasutatavad fondid
-    game.load.bitmapFont('gameover', 'assets/fonts/gameover.png', 'assets/fonts/gameover.fnt');
-    game.load.bitmapFont('videogame', 'assets/fonts/videogame.png', 'assets/fonts/videogame.fnt'); // ttf-formaadist konverditud kasutades: http://kvazars.com/littera/
-    game.load.bitmapFont('desyrel', 'assets/fonts/desyrel.png', 'assets/fonts/desyrel.xml');
-    game.load.spritesheet('button', 'assets/start.png', 201, 71);
-    game.load.audio('music','assets/sound/tetris.mp3'); // laetakse muusika
+    game.load.bitmapFont('gameover', 'gameover.png', 'assets/fonts/gameover.fnt');
+    game.load.bitmapFont('videogame', 'videogame.png', 'assets/fonts/videogame.fnt'); // ttf-formaadist konverditud kasutades: http://kvazars.com/littera/
+    game.load.bitmapFont('desyrel', 'desyrel.png', 'desyrel.xml');
+    game.load.spritesheet('button', 'start.png', 201, 71);
+    game.load.audio('music','tetris.mp3'); // laetakse muusika
 };
 
 Menu.create = function(){
